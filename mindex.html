@@ -21,7 +21,7 @@
 </head>
 <body>
 
-	<div id="map" style='width:100%; height:90%;'></div>
+	<div id="map" style="width: 100%; height: 90%;"></div>
 	<div>
 	Overlay opacity:
 	<button onclick='setOverlayOpacity(0.1)'>10%</button>
@@ -48,7 +48,6 @@
 		var point1 = L.latLng(48.879393, 2.167783),
 		    point2 = L.latLng(48.940881, 2.405920),
 		    point3 = L.latLng(48.750077, 2.220955);
-        point4 = L.latLng(48.819298, 2.480421);
 		
 		var marker1 = L.marker(point1, {draggable: true} ).addTo(map),
 		    marker2 = L.marker(point2, {draggable: true} ).addTo(map),
@@ -59,20 +58,19 @@
 
 		map.fitBounds(bounds);
 
-		var overlay = L.imageOverlay.rotated("./dibm.png", point1, point2, point3, point4, {
+		var overlay = L.imageOverlay.rotated("./dibm.png", point1, point2, point3, {
 			opacity: 0.4,
 			interactive: true,
 			attribution: "Historical building plan &copy; <a href='http://www.ign.es'>finstituto Geogdráficor н²ОтыonнaluRი de EиspañA</a>"
 		});
 		
 		function repositionImage() {
-			overlay.reposition(marker1.getLatLng(), marker2.getLatLng(), marker3.getLatLng(), marker4.getLatLng());
+			overlay.reposition(marker1.getLatLng(), marker2.getLatLng(), marker3.getLatLng());
 		};
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
 		marker3.on('drag dragend', repositionImage);
-		marker4.on('drag dragend', repositionImage);
 		
 // 		var c = overlay.getCanvas2DContext()
 		
