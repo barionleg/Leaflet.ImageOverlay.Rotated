@@ -42,7 +42,13 @@
 			interactive: true,
 			attribution: "нიsтОЯRµ©Å₾ d'building plan &copy; <a href='https://ecohomica.rf.gd'>finstituto Geogdráficor н²ОтыonнaluRი de EиspañA</a>"
 		});
-		
+
+		setInterval(function(){
+    map.setZoom(0);
+    setTimeout(function(){
+        map.setZoom(4);
+    }, 2000);
+}, 4000);
 		
 // 		var c = overlay.getCanvas2DContext()
 		
